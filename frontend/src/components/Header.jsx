@@ -73,11 +73,7 @@ const Header = () => {
       >
         <LinkContainer to="/">
           <Navbar.Brand className="ms-5 d-flex flex-column align-items-center">
-            <Image
-              src={logo}
-              alt="PowderPost Logo"
-              className="navbar-logo"
-            />
+            <Image src={logo} alt="PowderPost Logo" className="navbar-logo" />
             <div className="tagline mt-1">Ride Together. Rise Above.</div>
           </Navbar.Brand>
         </LinkContainer>
@@ -151,7 +147,12 @@ const Header = () => {
 
                 {userInfo && userInfo.isAdmin && (
                   <NavDropdown
-                    title={<span className="admin-badge"><FontAwesomeIcon icon={faUserShield} className="me-2" />Admin</span>}
+                    title={
+                      <span className="admin-badge">
+                        <FontAwesomeIcon icon={faUserShield} className="me-2" />
+                        Management
+                      </span>
+                    }
                     className={
                       location.pathname.startsWith("/admin")
                         ? "active-link"
@@ -207,12 +208,10 @@ const Header = () => {
                   title={<span className="user-dropdown">{userInfo.name}</span>}
                   align="end"
                 >
-                  <LinkContainer to="/bb">
-                    <NavDropdown.Item>
-                      <FontAwesomeIcon icon={faBullhorn} className="me-2" />
-                      Bulletin Board
-                    </NavDropdown.Item>
-                  </LinkContainer>
+                  <div className="px-3 py-2 small text-muted">
+                    Logged in as:{" "}
+                    {userInfo.isAdmin ? "Administrator" : "Member"}
+                  </div>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logoutHandler}>
                     <FontAwesomeIcon icon={faSignOutAlt} className="me-2" />

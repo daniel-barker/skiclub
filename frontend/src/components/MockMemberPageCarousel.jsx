@@ -31,7 +31,7 @@ const MockMemberPageCarousel = () => {
           <img
             className="d-block w-100"
             src={img.image}
-            style={{ height: "65vh" }}
+            style={{ height: "100vh" }}
             alt={img.title}
           />
         </Carousel.Item>

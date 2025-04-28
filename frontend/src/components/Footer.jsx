@@ -5,8 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 const navigation = {
   clubInfo: [
     { name: "Club History", to: "/history", icon: "fas fa-book-open" },
-    { name: "House Rules", to: "/house-rules", icon: "fas fa-scroll" },
-    { name: "Bylaws", to: "/bylaws", icon: "fas fa-gavel" },
   ],
   memberResources: [
     { name: "Member Directory", to: "/directory", icon: "fas fa-address-book" },
@@ -16,19 +14,19 @@ const navigation = {
   ],
   external: [
     {
-      name: "Chamber Website",
-      href: "https://www.ellicottvilleny.com/",
-      icon: "fas fa-external-link-alt",
+      name: "Powder Forecast",
+      href: "https://opensnow.com/",
+      icon: "fas fa-snowflake",
     },
     {
-      name: "Holiday Valley Facebook",
-      href: "https://www.facebook.com/holidayvalley",
-      icon: "fab fa-facebook",
+      name: "Mountain Gear",
+      href: "https://www.backcountry.com/",
+      icon: "fas fa-mountain",
     },
     {
-      name: "Holiday Valley Resort",
-      href: "https://www.holidayvalley.com/",
-      icon: "fas fa-skiing",
+      name: "Trail Maps",
+      href: "https://www.trailforks.com/",
+      icon: "fas fa-map-marked-alt",
     },
   ],
 };

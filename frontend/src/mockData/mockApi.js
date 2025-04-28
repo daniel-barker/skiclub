@@ -43,7 +43,16 @@ export const mockApiHandlers = {
   '/api/users/auth': async (data) => {
     const { username, password } = data;
     if (username && password) {
-      return mockResponse(currentUser);
+      // Find the user with the matching username
+      const user = users.find(u => u.username === username);
+      
+      // In a real app, we would check the hashed password
+      // For this mock, we'll just check if the user exists
+      if (user) {
+        // Return the user without the password
+        const { password: _, ...userWithoutPassword } = user;
+        return mockResponse(userWithoutPassword);
+      }
     }
     return mockResponse(null, { message: 'Invalid credentials' }, 401);
   },

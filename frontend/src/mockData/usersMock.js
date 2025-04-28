@@ -22,13 +22,5 @@ export const users = [
   }
 ];
 
-// Admin user for default auth state
-export const currentUser = {
-  _id: '67f6c0b05a8f631d3bc66a36',
-  username: 'admin',
-  email: 'admin@ellicottvilleskiclub.com',
-  name: 'Admin User',
-  position: 'Admin',
-  isApproved: true,
-  isAdmin: true
-};
+// Default auth state is null (no user logged in)
+export const currentUser = null;

@@ -97,7 +97,8 @@ const MemberScreen = () => {
   return (
     <ErrorBoundary>
       <div className="member-screen">
-        <MockMemberPageCarousel />
+
+          <MockMemberPageCarousel />
 
         <div className="member-page-container mx-5">
           {/* Latest Updates Section */}

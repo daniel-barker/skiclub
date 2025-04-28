@@ -134,13 +134,27 @@ const LoginScreen = () => {
           username: values.username,
           password: values.password,
         }).unwrap();
+
+        if (!res) {
+          throw new Error('Login failed - no response from server');
+        }
+
+        // Successfully logged in
         dispatch(setCredentials({ ...res }));
+
+        // Show success message with user role information
+        const roleMessage = res.isAdmin ?
+          'Logged in as Administrator' :
+          'Logged in as Member';
+        toast.success(`Welcome, ${res.name}! ${roleMessage}`);
+
         navigate("/home");
       } catch (err) {
-        toast.error(err?.data?.message || err.error);
+        console.error('Login error:', err);
+        toast.error(err?.data?.message || err.error || 'Invalid username or password');
         setErrors((prev) => ({
           ...prev,
-          submit: err?.data?.message || "Login failed",
+          submit: err?.data?.message || err.error || "Invalid username or password",
         }));
       } finally {
         setIsSubmitting(false);
@@ -152,7 +166,7 @@ const LoginScreen = () => {
 
   return (
     <ErrorBoundary>
-      <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
+      <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh", background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
         <div className="login-form p-4 rounded shadow" style={{ width: "100%", maxWidth: "450px", backgroundColor: "white", borderTop: "4px solid #FF6B35" }}>
           <div className="text-center mb-4">
             <Image src={club_logo} alt="PowderPost Logo" style={{ width: "180px" }} />
@@ -204,8 +218,8 @@ const LoginScreen = () => {
               Don't have an account? <Link to="/register">Register</Link>
             </div>
             <div className="text-center">
-              <Button 
-                variant="link" 
+              <Button
+                variant="link"
                 onClick={() => setShowCredentialsModal(true)}
                 className="p-0"
               >
@@ -215,8 +229,8 @@ const LoginScreen = () => {
           </Form>
 
           {/* Credentials Modal */}
-          <Modal 
-            show={showCredentialsModal} 
+          <Modal
+            show={showCredentialsModal}
             onHide={() => setShowCredentialsModal(false)}
             centered
           >
@@ -225,13 +239,13 @@ const LoginScreen = () => {
             </Modal.Header>
             <Modal.Body>
               <p>For demonstration purposes, you can use the following credentials:</p>
-              
+
               <div className="bg-light p-3 rounded mb-3">
                 <h6>Admin Access:</h6>
                 <p className="mb-1">Username: <strong>admin</strong></p>
                 <p>Password: <strong>abc123</strong></p>
               </div>
-              
+
               <div className="bg-light p-3 rounded">
                 <h6>Regular User Access:</h6>
                 <p className="mb-1">Username: <strong>user</strong></p>
@@ -276,7 +290,7 @@ const LoginScreen = () => {
 
           {isLoading && <Loader />}
         </div>
-      </Container>
+      </div>
     </ErrorBoundary>
   );
 };
