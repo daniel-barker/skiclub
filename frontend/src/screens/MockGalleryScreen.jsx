@@ -1,26 +1,13 @@
 import { useMemo } from "react";
-import {
-  useGetImagesQuery,
-  useGetImageTagsQuery,
-} from "../slices/imageApiSlice";
-import { Col, Row, Container, Card, Spinner, Alert } from "react-bootstrap";
+import { Col, Row, Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import ErrorBoundary from "../components/ErrorBoundary";
 
-// Loading Component
-const LoadingSpinner = () => (
-  <div
-    className="d-flex justify-content-center align-items-center"
-    style={{ height: "50vh" }}
-  >
-    <Spinner animation="border" role="status" variant="primary">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
-  </div>
-);
+// Import mock data
+import { images, imageTags } from "../mockData/imagesMock";
 
 // Gallery Image Component
 const GalleryImage = ({ image }) => (
@@ -79,7 +66,12 @@ const TagsSection = ({ tags }) => (
         <Col xs="auto" key={tag}>
           <Link
             to={`/gallery/${tag}`}
-            className="btn btn-outline-primary-custom tag-button"
+            className="btn btn-outline-primary tag-button"
+            style={{
+              transition: "all 0.2s ease-in-out",
+              borderRadius: "20px",
+              padding: "0.5rem 1rem"
+            }}
           >
             {tag}
           </Link>
@@ -93,37 +85,12 @@ TagsSection.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const GalleryScreen = () => {
-  const {
-    data: images,
-    isLoading: isLoadingImages,
-    error: imagesError,
-  } = useGetImagesQuery();
-  const {
-    data: tags,
-    isLoading: isLoadingTags,
-    error: tagsError,
-  } = useGetImageTagsQuery();
-
+const MockGalleryScreen = () => {
   const sortedImages = useMemo(() => {
-    if (!images) return [];
     return [...images].sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
-  }, [images]);
-
-  if (isLoadingImages || isLoadingTags) return <LoadingSpinner />;
-
-  if (imagesError || tagsError) {
-    return (
-      <Alert variant="danger" className="m-3">
-        Error:{" "}
-        {imagesError?.data?.message ||
-          tagsError?.data?.message ||
-          "Failed to load gallery"}
-      </Alert>
-    );
-  }
+  }, []);
 
   return (
     <ErrorBoundary>
@@ -147,46 +114,10 @@ const GalleryScreen = () => {
           </Row>
         </Gallery>
 
-        {tags && tags.length > 0 && <TagsSection tags={tags} />}
+        {imageTags && imageTags.length > 0 && <TagsSection tags={imageTags} />}
       </Container>
     </ErrorBoundary>
   );
 };
 
-export default GalleryScreen;
-
-// Add these styles to your CSS
-/*
-.gallery-card {
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-
-    .gallery-image {
-      transform: scale(1.05);
-    }
-  }
-}
-
-.tag-button {
-  transition: all 0.2s ease-in-out;
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-}
-
-.btn-outline-primary-custom {
-  color: #007bff;
-  border-color: #007bff;
-
-  &:hover {
-    color: white;
-    background-color: #007bff;
-  }
-}
-*/
+export default MockGalleryScreen;

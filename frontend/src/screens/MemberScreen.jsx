@@ -2,9 +2,9 @@ import { useCallback } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import LatestNews from "../components/LatestNews";
-import LatestPosts from "../components/LatestPosts";
-import MemberPageCarousel from "../components/MemberPageCarousel";
+import MockLatestNews from "../components/MockLatestNews";
+import MockLatestPosts from "../components/MockLatestPosts";
+import MockMemberPageCarousel from "../components/MockMemberPageCarousel";
 import ErrorBoundary from "../components/ErrorBoundary";
 
 import bboard from "../assets/images/bboard.png";
@@ -66,14 +66,14 @@ const MemberScreen = () => {
   return (
     <ErrorBoundary>
       <div className="member-screen">
-        <MemberPageCarousel />
+        <MockMemberPageCarousel />
 
         <div className="member-page-container mx-5">
           {/* Latest Updates Section */}
           <Row className="mt-5 justify-content-center">
             <Col md={8} className="p-2">
               <ErrorBoundary>
-                <LatestNews />
+                <MockLatestNews />
               </ErrorBoundary>
             </Col>
           </Row>
@@ -81,7 +81,7 @@ const MemberScreen = () => {
           <Row className="justify-content-center">
             <Col md={8} className="p-2">
               <ErrorBoundary>
-                <LatestPosts />
+                <MockLatestPosts />
               </ErrorBoundary>
             </Col>
           </Row>

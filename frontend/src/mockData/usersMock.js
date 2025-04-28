@@ -1,41 +1,34 @@
-// Sample user data
+// Sample user data with proper structure
 export const users = [
   {
-    _id: '1',
+    _id: '67f6c0b05a8f631d3bc66a36',
+    username: 'admin',
+    password: '$2a$10$VuP.GV5kHU7gKcmBd.7yq.OH8UMKEp1Y2ZWmXuPRtHY9fJ/26A8Q2', // hashed 'abc123'
+    email: 'admin@ellicottvilleskiclub.com',
     name: 'Admin User',
-    email: 'admin@example.com',
-    isAdmin: true,
-    unit: '101',
-    phone: '555-123-4567',
-    username: 'admin'
+    position: 'Admin',
+    isApproved: true,
+    isAdmin: true
   },
   {
-    _id: '2',
-    name: 'John Doe',
-    email: 'john@example.com',
-    isAdmin: false,
-    unit: '102',
-    phone: '555-234-5678',
-    username: 'johndoe'
-  },
-  {
-    _id: '3',
-    name: 'Jane Smith',
-    email: 'jane@example.com',
-    isAdmin: false,
-    unit: '103',
-    phone: '555-345-6789',
-    username: 'janesmith'
+    _id: '67f6c0b05a8f631d3bc66a37',
+    username: 'user',
+    password: '$2a$10$VuP.GV5kHU7gKcmBd.7yq.OH8UMKEp1Y2ZWmXuPRtHY9fJ/26A8Q2', // hashed 'abc123'
+    email: 'user@ellicottvilleskiclub.com',
+    name: 'Regular User',
+    position: 'Member',
+    isApproved: true,
+    isAdmin: false
   }
 ];
 
-// Current user for auth state
+// Admin user for default auth state
 export const currentUser = {
-  _id: '1',
+  _id: '67f6c0b05a8f631d3bc66a36',
+  username: 'admin',
+  email: 'admin@ellicottvilleskiclub.com',
   name: 'Admin User',
-  email: 'admin@example.com',
-  isAdmin: true,
-  unit: '101',
-  phone: '555-123-4567',
-  username: 'admin'
+  position: 'Admin',
+  isApproved: true,
+  isAdmin: true
 };

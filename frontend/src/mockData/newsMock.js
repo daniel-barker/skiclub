@@ -7,8 +7,8 @@ export const news = [
     createdAt: '2024-11-15T12:00:00Z',
     updatedAt: '2024-11-15T12:00:00Z',
     isPublished: true,
-    image: '/images/winter-opening.jpg',
-    pdfUrl: '/pdfs/winter-schedule.pdf'
+    image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=300'
   },
   {
     _id: '2',
@@ -18,7 +18,8 @@ export const news = [
     createdAt: '2024-10-20T14:30:00Z',
     updatedAt: '2024-10-21T09:15:00Z',
     isPublished: true,
-    image: '/images/new-chairlift.jpg'
+    image: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?q=80&w=1200',
+    thumbnail: 'https://images.unsplash.com/photo-1605540436563-5bca919ae766?q=80&w=300'
   },
   {
     _id: '3',

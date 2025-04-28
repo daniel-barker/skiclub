@@ -148,18 +148,6 @@ const Header = () => {
                       Club History
                     </NavDropdown.Item>
                   </LinkContainer>
-                  <LinkContainer to="/house-rules">
-                    <NavDropdown.Item>
-                      <FontAwesomeIcon icon={faScroll} className="me-2" />
-                      House Rules
-                    </NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to="/bylaws">
-                    <NavDropdown.Item>
-                      <FontAwesomeIcon icon={faGavel} className="me-2" />
-                      Bylaws
-                    </NavDropdown.Item>
-                  </LinkContainer>
                 </NavDropdown>
 
                 {userInfo && userInfo.isAdmin && (

@@ -7,16 +7,47 @@ import { logout } from "./authSlice"; // Import the logout action
 // NOTE: This version uses mock data for portfolio purposes
 // No actual backend calls are made
 
-// Original base query (kept for reference)
-const originalBaseQuery = fetchBaseQuery({
-  baseUrl: BASE_URL,
-});
-
 // Mock base query that uses our mock data instead of real API calls
 const mockBaseQuery = () => async (args) => {
   const { url, method = 'GET', body } = args;
   
+  // Handle cases where URL might be undefined
+  if (!url) {
+    console.warn(`Mock API call with undefined URL: ${method}`);
+    
+    // Special case handlers for undefined URLs based on the component stack trace
+    const stack = new Error().stack || '';
+    
+    if (stack.includes('MemberPageCarousel')) {
+      return mockApiHandlers['/api/images/carousel']();
+    }
+    
+    if (stack.includes('LatestNews')) {
+      return mockApiHandlers['/api/news/latest']();
+    }
+    
+    if (stack.includes('LatestPosts')) {
+      return mockApiHandlers['/api/posts/latest']();
+    }
+    
+    // Default response for undefined URLs
+    return { data: [] };
+  }
+  
   console.log(`Mock API call: ${method} ${url}`);
+  
+  // Special case handlers for specific endpoints
+  if (url.includes('/api/news/latest')) {
+    return mockApiHandlers['/api/news/latest']();
+  }
+  
+  if (url.includes('/api/posts/latest')) {
+    return mockApiHandlers['/api/posts/latest']();
+  }
+  
+  if (url.includes('/api/images/carousel')) {
+    return mockApiHandlers['/api/images/carousel']();
+  }
   
   // Extract the base URL and ID if present
   const urlParts = url.split('/');
@@ -38,9 +69,9 @@ const mockBaseQuery = () => async (args) => {
     return mockApiHandlers[baseUrl](method, body);
   }
   
-  // For any unhandled URLs, return a 404
+  // For any unhandled URLs, return empty data instead of an error
   console.warn(`Unhandled mock API call: ${method} ${url}`);
-  return { error: { status: 404, data: { message: 'Not found' } } };
+  return { data: [] };
 };
 
 // Use the mock base query for the portfolio version
