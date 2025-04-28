@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* body {
+  height: 100vh;
+  background-color: #fff;
+  padding-top: 146px;
+} */
+
+* {
+  overscroll-behavior: none;
+}
+
+.honorary-note {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grey-background {
+  background-color: #f5f5f5;
+}
+
+.page-title {
+  padding-top: 1rem;
+}
+
+.app-js-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.btn-primary {
+  background-color: #01467f;
+  border-color: #013567;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #013567;
+  border-color: #013567;
+}
+
+/* Outline Button with Primary Colors */
+.btn-outline-primary {
+  color: #013567;
+  border-color: #013567;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  color: #fff;
+  background-color: #013567;
+  border-color: #013567;
+}
+
+.blurred-background {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  height: 100%;
+}
+
+.member-screen-links {
+  background-color: #01467f;
+  border-color: #013567;
+  color: #ffffff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #0169b1, #01467f);
+
+}
+
+.member-screen-links:hover,
+.member-screen-links:focus,
+.member-screen-links:active {
+  background-color: #0169b1;
+  border-color: #0169b1;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(145deg, #0169b1, #01467f);
+}
+
+.member-screen-links .icon {
+  transition: transform 0.3s ease;
+}
+
+.member-screen-links:hover .icon {
+  transform: rotate(5deg);
+}
+
+.body-padding {
+  padding-top: 64px;
+}
+
+.carousel-item img {
+  height: 500px;
+  /* Two options for carousel.
+    - `contain`: The replaced content is scaled to maintain its aspect
+       ratio while fitting within the element's content box. The entire
+       object will be visible, but there may be empty space within the box.
+
+    - `cover`: The replaced content is scaled to maintain its aspect
+       ratio while filling the element's content box. The object will
+       cover the entire box, but parts of it may be clipped to achieve this.
+  */
+  object-fit: cover;
+  width: 100%;
+}
+
+.event-title-shade {
+  background-color: rgba(125, 125, 125, 0.8);
+  padding-left: 10px;
+}
+
+.event-container {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.form-background {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.event-detail-container {
+  padding: 5rem;
+}
+
+@media (min-width: 768px) {
+  .nowrap-on-desktop {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .custom-navbar .navbar-brand {
+    padding-left: 20px;
+    /* Removes padding on smaller screens */
+  }
+}
+
+@media (max-width: 767.98px) {
+  .custom-navbar .navbar-toggler {
+    margin-right: 20px;
+    /* Adds padding on smaller screens */
+  }
+}
+
+#tag-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.member-create {
+  border: 1px dashed #000000;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.caption {
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 16px;
+  color: #fff;
+  width: calc(100% - 32px);
+  padding: 2px 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+}
+
+/* ckeditor stuff */
+
+@media print {
+  body {
+    margin: 0 !important;
+  }
+}
+
+.main-container {
+  font-family: 'Lato';
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ck-content {
+  font-family: 'Lato';
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.editor-container_classic-editor .editor-container__editor {
+  min-width: 615px;
+  max-width: 615px;
+}

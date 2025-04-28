@@ -1,0 +1,107 @@
+.content-screen {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.content-screen h1,
+.content-screen h2,
+.content-screen h3 {
+  color: #01467f;
+  margin-bottom: 1.5rem;
+}
+
+.content-screen h4,
+.content-screen h5,
+.content-screen h6 {
+  color: #0169b1;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-screen p {
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.content-screen ul,
+.content-screen ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.content-screen li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.content-screen section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.content-screen section:last-child {
+  border-bottom: none;
+}
+
+.content-screen strong {
+  color: #01467f;
+}
+
+.content-screen em {
+  color: #0169b1;
+}
+
+.content-screen .table-of-contents {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+.content-screen .table-of-contents ol {
+  margin-bottom: 0;
+  counter-reset: item;
+  list-style-type: none;
+}
+
+.content-screen .table-of-contents li {
+  color: #01467f;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.content-screen .table-of-contents li:before {
+  content: counter(item) ".";
+  counter-increment: item;
+  position: absolute;
+  left: 1rem;
+  color: #0169b1;
+}
+
+.content-screen .table-of-contents li:hover {
+  color: #0169b1;
+  background-color: rgba(1, 105, 177, 0.1);
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .content-screen {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .content-screen .table-of-contents li {
+    padding: 0.75rem 1rem;
+  }
+}

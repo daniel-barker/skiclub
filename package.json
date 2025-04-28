@@ -1,0 +1,19 @@
+{
+  "name": "evskiclub-portfolio",
+  "version": "1.0.0",
+  "description": "React portfolio project for Ellicottville Ski Club",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-barker/evskiclub.git"
+  },
+  "author": "Mac Stephens & Daniel Barker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniel-barker/evskiclub/issues"
+  },
+  "homepage": "https://github.com/daniel-barker/evskiclub#readme"
+}
