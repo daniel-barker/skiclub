@@ -283,7 +283,7 @@ const MemberCard = ({ unit, onImageClick }) => (
           >
             <img
               src={unit.thumbnail}
-              alt="Family Photo"
+              alt="Family"
               className="img-fluid rounded"
               style={{ width: "100%", aspectRatio: "1", objectFit: "cover" }}
             />

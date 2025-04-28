@@ -48,7 +48,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer text-light py-4">
+    <footer className="footer text-light py-4 powderpost-footer">
       <Container>
         <Row className="justify-content-center text-center">
           <Col lg={8}>
@@ -101,8 +101,7 @@ const Footer = () => {
         <Row className="mt-4 border-top pt-3">
           <Col className="text-center">
             <p className="small text-light mb-0">
-              &copy; {new Date().getFullYear()} Ellicottville Ski Club. All
-              rights reserved.
+              &copy; {new Date().getFullYear()} PowderPost. All rights reserved.
             </p>
           </Col>
         </Row>

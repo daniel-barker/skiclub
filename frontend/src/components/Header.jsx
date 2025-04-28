@@ -5,7 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
-import logo from "../assets/images/club_logo.png";
+import logo from "../assets/images/powderpost_logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAddressBook,
@@ -13,8 +13,6 @@ import {
   faBullhorn,
   faImages,
   faBookOpen,
-  faScroll,
-  faGavel,
   faNewspaper,
   faPhotoVideo,
   faClipboardList,
@@ -71,15 +69,16 @@ const Header = () => {
     <header>
       <Navbar
         expand="lg"
-        className={`luxury-navbar ${scrolled ? "scrolled" : ""}`}
+        className={`powderpost-navbar ${scrolled ? "scrolled" : ""}`}
       >
         <LinkContainer to="/">
-          <Navbar.Brand className="ms-5">
+          <Navbar.Brand className="ms-5 d-flex flex-column align-items-center">
             <Image
               src={logo}
-              alt="Ellicottville Ski Club Logo"
+              alt="PowderPost Logo"
               className="navbar-logo"
             />
+            <div className="tagline mt-1">Ride Together. Rise Above.</div>
           </Navbar.Brand>
         </LinkContainer>
 
@@ -152,7 +151,7 @@ const Header = () => {
 
                 {userInfo && userInfo.isAdmin && (
                   <NavDropdown
-                    title={<span className="admin-badge">Admin</span>}
+                    title={<span className="admin-badge"><FontAwesomeIcon icon={faUserShield} className="me-2" />Admin</span>}
                     className={
                       location.pathname.startsWith("/admin")
                         ? "active-link"

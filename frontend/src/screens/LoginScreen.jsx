@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { Form, Button, Image, Container } from "react-bootstrap";
+import { Form, Button, Image, Container, Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
 import Loader from "../components/Loader";
 import { useLoginMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
-import club_logo from "../assets/images/club_logo.png";
+import club_logo from "../assets/images/powderpost_logo.svg";
 import ErrorBoundary from "../components/ErrorBoundary";
 
 // Custom hook for form validation
@@ -79,9 +79,9 @@ FormInput.propTypes = {
 };
 
 const LoginScreen = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const location = useLocation(); // Temporarily removed with Google auth
+  const navigate = useNavigate();
+  const [showCredentialsModal, setShowCredentialsModal] = useState(true);
 
   const [login, { isLoading }] = useLoginMutation();
   const { userInfo } = useSelector((state) => state.auth);
@@ -152,17 +152,13 @@ const LoginScreen = () => {
 
   return (
     <ErrorBoundary>
-      <Container className="d-flex justify-content-center align-items-center min-vh-100">
-        <div
-          className="login-container bg-white p-4 rounded shadow-lg"
-          style={{ maxWidth: "32rem" }}
-        >
+      <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)" }}>
+        <div className="login-form p-4 rounded shadow" style={{ width: "100%", maxWidth: "450px", backgroundColor: "white", borderTop: "4px solid #FF6B35" }}>
           <div className="text-center mb-4">
-            <Image src={club_logo} fluid alt="Club Logo" />
+            <Image src={club_logo} alt="PowderPost Logo" style={{ width: "180px" }} />
+            <h2 className="mt-3 heading-font">Member Login</h2>
+            <p className="tagline">Ride Together. Rise Above.</p>
           </div>
-
-          <h2 className="text-center mb-4">Sign In</h2>
-
           <Form onSubmit={submitHandler}>
             <FormInput
               type="text"
@@ -191,7 +187,7 @@ const LoginScreen = () => {
             <Button
               type="submit"
               variant="primary"
-              className="w-100 mb-4"
+              className="w-100 mb-4 btn-action"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Signing In..." : "Sign In"}
@@ -207,7 +203,47 @@ const LoginScreen = () => {
             <div className="text-center">
               Don't have an account? <Link to="/register">Register</Link>
             </div>
+            <div className="text-center">
+              <Button 
+                variant="link" 
+                onClick={() => setShowCredentialsModal(true)}
+                className="p-0"
+              >
+                View demo login credentials
+              </Button>
+            </div>
           </Form>
+
+          {/* Credentials Modal */}
+          <Modal 
+            show={showCredentialsModal} 
+            onHide={() => setShowCredentialsModal(false)}
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title className="heading-font">PowderPost Demo Credentials</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>For demonstration purposes, you can use the following credentials:</p>
+              
+              <div className="bg-light p-3 rounded mb-3">
+                <h6>Admin Access:</h6>
+                <p className="mb-1">Username: <strong>admin</strong></p>
+                <p>Password: <strong>abc123</strong></p>
+              </div>
+              
+              <div className="bg-light p-3 rounded">
+                <h6>Regular User Access:</h6>
+                <p className="mb-1">Username: <strong>user</strong></p>
+                <p>Password: <strong>abc123</strong></p>
+              </div>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="primary" className="btn-action" onClick={() => setShowCredentialsModal(false)}>
+                Got it!
+              </Button>
+            </Modal.Footer>
+          </Modal>
 
           <div className="text-center mt-3">
             {/* Temporarily commented out Google sign-in button

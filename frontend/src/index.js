@@ -22,50 +22,37 @@ import RegistrationScreen from "./screens/RegistrationScreen";
 import MemberScreen from "./screens/MemberScreen";
 import AboutScreen from "./screens/AboutScreen";
 import HomeScreen from "./screens/HomeScreen";
-import UserListScreen from "./screens/Admin/UserListScreen";
 import MockUserListScreen from "./screens/Admin/MockUserListScreen";
 import UserEditScreen from "./screens/Admin/UserEditScreen";
 
-import EventListScreen from "./screens/Admin/EventListScreen";
 import MockEventListScreen from "./screens/Admin/MockEventListScreen";
 import MockEventEditScreen from "./screens/Admin/MockEventEditScreen";
-import EventCreateScreen from "./screens/Admin/EventCreateScreen";
-import EventEditScreen from "./screens/Admin/EventEditScreen";
-
-import NewsScreen from "./screens/NewsScreen";
 import MockNewsScreen from "./screens/MockNewsScreen";
 import NewsCreateScreen from "./screens/Admin/NewsCreateScreen";
-import NewsListScreen from "./screens/Admin/NewsListScreen";
 import MockNewsListScreen from "./screens/Admin/MockNewsListScreen";
 import NewsEditScreen from "./screens/Admin/NewsEditScreen";
 
 import PendingApprovalScreen from "./screens/PendingApprovalScreen";
 
 import ImageUploadScreen from "./screens/Admin/ImageUploadScreen";
-import ImageListScreen from "./screens/Admin/ImageListScreen";
+
 import MockImageListScreen from "./screens/Admin/MockImageListScreen";
 import ImageEditScreen from "./screens/Admin/ImageEditScreen";
 
-import GalleryScreen from "./screens/GalleryScreen";
 import MockGalleryScreen from "./screens/MockGalleryScreen";
 import GalleryByTagScreen from "./screens/GalleryByTagScreen";
 
-import MemberListScreen from "./screens/Admin/MemberListScreen";
 import MockMemberListScreen from "./screens/Admin/MockMemberListScreen";
 import MemberCreateScreen from "./screens/Admin/MemberCreateScreen";
 import MemberEditScreen from "./screens/Admin/MemberEditScreen";
 import MockMemberDirectory from "./screens/MockMemberDirectory";
 
-import BulletinBoard from "./screens/BB/BulletinBoard";
 import MockBulletinBoard from "./screens/BB/MockBulletinBoard";
-import CreatePost from "./screens/BB/CreatePost";
 import MockCreatePost from "./screens/BB/MockCreatePost";
 import MyPosts from "./screens/BB/MyPosts";
-import BBListScreen from "./screens/Admin/BBListScreen";
 import MockBBListScreen from "./screens/Admin/MockBBListScreen";
 import BBEditScreen from "./screens/Admin/BBEditScreen";
 
-import EventCalendar from "./screens/EventCalendar";
 import MockEventCalendar from "./screens/MockEventCalendar";
 import BBUserEditScreen from "./screens/BB/BBUserEditScreen.jsx";
 

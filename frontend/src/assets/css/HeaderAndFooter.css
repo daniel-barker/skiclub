@@ -1,44 +1,47 @@
 /* ---------- HEADER ---------- */
-/* High-end Header Styling */
-.luxury-navbar {
-  background: linear-gradient(to right, #ffffff, #f8f9fa);
-  border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+/* Modern Mountain Header Styling */
+.powderpost-navbar {
+  background: linear-gradient(to right, #FFFFFF, #F8F9FA);
+  border-bottom: 3px solid #0A0A0A;
   padding: 0.75rem 0;
   transition: all 0.3s ease;
 }
 
-.luxury-navbar.scrolled {
+.powderpost-navbar.scrolled {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .club-name {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 1.5rem;
-  letter-spacing: 0.5px;
-  color: #2c3e50;
+  letter-spacing: 1px;
+  color: #0A0A0A;
   margin-left: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .navbar-logo {
-  height: 110px;
+  height: 80px;
   width: auto;
   transition: all 0.3s ease;
 }
 
 .nav-link {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
-  color: #2c3e50 !important;
+  color: #0A0A0A !important;
   padding: 0.5rem 1rem !important;
   transition: all 0.2s ease;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
-  color: #01467f !important;
+  color: #5DA9E9 !important;
   transform: translateY(-1px);
 }
 
@@ -63,7 +66,7 @@
 .dropdown-item:hover {
   background-color: #f8f9fa;
   transform: translateX(3px);
-  color: #01467f;
+  color: #5DA9E9;
 }
 
 .dropdown-item i {
@@ -75,7 +78,7 @@
 /* Change active dropdown item color */
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #013567;
+  background-color: #5DA9E9;
   color: #fff;
   font-weight: 600;
 }
@@ -92,39 +95,46 @@
   left: 1rem;
   right: 1rem;
   height: 2px;
-  background: linear-gradient(to right,  #013567, #01467f);
+  background: linear-gradient(to right, #5DA9E9, #FF6B35);
   border-radius: 2px;
 }
 
 .user-dropdown {
-  background-color: #01467f;
+  background-color: #FF6B35;
   color: white !important;
   border-radius: 20px;
   padding: 0.4rem 1.2rem !important;
   font-size: 1rem;
   transition: all 0.2s ease;
   margin-left: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .user-dropdown:hover {
-  background-color: #013567;
+  background-color: #E55A24;
   transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.3);
 }
 
 .admin-badge {
-  background: #01467f;
+  background: #5DA9E9;
   color: white;
   padding: 0.4rem 1.2rem;
   border-radius: 15px;
   font-size: 1rem;
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .admin-badge:hover {
-  background: #013567;
+  background: #3A87C7;
   transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(93, 169, 233, 0.3);
 }
 
 /* Animations */
@@ -180,18 +190,21 @@
 
 /* ---------- FOOTER ---------- */
 
-.footer {
-  background-color: #013567;
+.powderpost-footer {
+  background-color: #0A0A0A;
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
+  border-top: 3px solid #5DA9E9;
 }
 
 .footer-heading {
-  font-size: 0.875rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .footer-link {
@@ -204,5 +217,7 @@
 }
 
 .footer-link:hover {
-  color: #fff;
+  color: #5DA9E9;
+  transform: translateX(3px);
+  transition: all 0.2s ease;
 }

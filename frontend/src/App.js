@@ -6,6 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import PortfolioBanner from "./components/PortfolioBanner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./assets/css/PowderPostTheme.css";
 import "./assets/css/App.css";
 import "./assets/css/HeaderAndFooter.css";
 import "./assets/css/NewsAndBulletin.css";

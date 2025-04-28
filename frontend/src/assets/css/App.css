@@ -35,30 +35,35 @@
   height: 100vh;
 }
 
+/* PowderPost Primary Button - Already defined in PowderPostTheme.css */
 .btn-primary {
-  background-color: #01467f;
-  border-color: #013567;
+  background-color: #5DA9E9;
+  border-color: #3A87C7;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #013567;
-  border-color: #013567;
+  background-color: #3A87C7;
+  border-color: #3A87C7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(93, 169, 233, 0.3);
 }
 
 /* Outline Button with Primary Colors */
 .btn-outline-primary {
-  color: #013567;
-  border-color: #013567;
+  color: #5DA9E9;
+  border-color: #5DA9E9;
+  font-weight: 600;
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
   color: #fff;
-  background-color: #013567;
-  border-color: #013567;
+  background-color: #5DA9E9;
+  border-color: #5DA9E9;
+  transform: translateY(-2px);
 }
 
 .blurred-background {
@@ -68,24 +73,23 @@
 }
 
 .member-screen-links {
-  background-color: #01467f;
-  border-color: #013567;
+  background-color: #5DA9E9;
+  border-color: #3A87C7;
   color: #ffffff;
   border-radius: 8px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(145deg, #0169b1, #01467f);
-
+  background: linear-gradient(145deg, #8EC5F6, #5DA9E9);
 }
 
 .member-screen-links:hover,
 .member-screen-links:focus,
 .member-screen-links:active {
-  background-color: #0169b1;
-  border-color: #0169b1;
+  background-color: #3A87C7;
+  border-color: #3A87C7;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-5px) scale(1.05);
-  background: linear-gradient(145deg, #0169b1, #01467f);
+  background: linear-gradient(145deg, #5DA9E9, #3A87C7);
 }
 
 .member-screen-links .icon {

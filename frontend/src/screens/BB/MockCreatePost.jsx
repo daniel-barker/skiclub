@@ -11,11 +11,12 @@ import {
 import { FaArrowLeft, FaSave, FaImage } from "react-icons/fa";
 import { toast } from "react-toastify";
 import ErrorBoundary from "../../components/ErrorBoundary";
-import { handleFormSuccess, createPortfolioFormHandler } from "../../mockData/formHelper";
+import { handleFormSuccess } from "../../mockData/formHelper";
 
 const MockCreatePost = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [image, setImage] = useState("");
   const [imagePreview, setImagePreview] = useState("");
   const [errors, setErrors] = useState({});
